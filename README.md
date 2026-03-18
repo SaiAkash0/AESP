@@ -92,17 +92,6 @@ Add AESP to your Cursor MCP configuration. Create or edit `.cursor/mcp.json` in 
 
 **Windows example:**
 
-```json
-{
-  "mcpServers": {
-    "aesp": {
-      "command": "C:/tools/aesp.exe",
-      "args": ["serve", "C:/Users/you/projects/my-app"]
-    }
-  }
-}
-```
-
 **Windows path formats (both valid):**
 
 **Option A (recommended): forward slashes**
@@ -124,8 +113,11 @@ Add AESP to your Cursor MCP configuration. Create or edit `.cursor/mcp.json` in 
 {
   "mcpServers": {
     "aesp": {
-      "command": "C:\\\\Users\\\\you\\\\Desktop\\\\AESP\\\\target\\\\release\\\\aesp.exe",
-      "args": ["serve", "C:\\\\Users\\\\you\\\\projects\\\\your-project"]
+      "command": "C:\\Users\\you\\Desktop\\AESP\\target\\release\\aesp.exe",
+      "args": [
+        "serve",
+        "C:\\Users\\you\\projects\\your-project"
+      ]
     }
   }
 }
