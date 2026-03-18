@@ -1,0 +1,132 @@
+{
+  "schema_name": "code",
+  "schema_version": "1.0.0",
+  "entity_types": {
+    "project": {
+      "properties": {
+        "root_path": "string",
+        "language_primary": "string",
+        "languages": ["string"],
+        "framework": "string",
+        "package_manager": "string",
+        "entry_points": ["string"]
+      }
+    },
+    "module": {
+      "properties": {
+        "path": "string",
+        "language": "string",
+        "loc": "integer",
+        "complexity": "float"
+      }
+    },
+    "file": {
+      "properties": {
+        "path": "string",
+        "language": "string",
+        "loc": "integer",
+        "hash": "string",
+        "last_modified": "string"
+      }
+    },
+    "function": {
+      "properties": {
+        "name": "string",
+        "signature": "string",
+        "parameters": "array",
+        "return_type": "string",
+        "is_async": "boolean",
+        "is_exported": "boolean",
+        "visibility": "string",
+        "loc": "integer",
+        "start_line": "integer",
+        "end_line": "integer",
+        "docstring": "string",
+        "body_hash": "string"
+      }
+    },
+    "class": {
+      "properties": {
+        "name": "string",
+        "is_exported": "boolean",
+        "extends": "string",
+        "implements": ["string"],
+        "visibility": "string",
+        "loc": "integer",
+        "start_line": "integer",
+        "end_line": "integer",
+        "docstring": "string"
+      }
+    },
+    "type_definition": {
+      "properties": {
+        "name": "string",
+        "kind": "string",
+        "is_exported": "boolean",
+        "definition": "string",
+        "start_line": "integer",
+        "end_line": "integer"
+      }
+    },
+    "variable": {
+      "properties": {
+        "name": "string",
+        "type": "string",
+        "is_const": "boolean",
+        "is_exported": "boolean",
+        "scope": "string",
+        "value_preview": "string"
+      }
+    },
+    "dependency": {
+      "properties": {
+        "name": "string",
+        "version": "string",
+        "is_dev": "boolean",
+        "source": "string"
+      }
+    },
+    "config_file": {
+      "properties": {
+        "path": "string",
+        "format": "string",
+        "keys": ["string"],
+        "env_vars": ["string"]
+      }
+    },
+    "test_file": {
+      "properties": {
+        "path": "string",
+        "framework": "string",
+        "test_count": "integer",
+        "tests_for": "string"
+      }
+    }
+  },
+  "relationship_types": {
+    "contains": {
+      "description": "Parent contains child"
+    },
+    "calls": {
+      "description": "Source function calls target function"
+    },
+    "imports": {
+      "description": "Source file imports from target"
+    },
+    "extends": {
+      "description": "Class extends another class"
+    },
+    "implements": {
+      "description": "Class implements an interface"
+    },
+    "type_references": {
+      "description": "Function/variable references a type"
+    },
+    "tests": {
+      "description": "Test file tests a function/class/module"
+    },
+    "reads_config": {
+      "description": "Code reads from a config"
+    }
+  }
+}

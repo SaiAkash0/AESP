@@ -1,0 +1,57 @@
+[package]
+name = "aesp"
+version = "0.1.0"
+edition = "2021"
+description = "Agent Execution & State Protocol — persistent structured context for AI agents"
+license = "MIT"
+repository = "https://github.com/SaiAkash0/aesp"
+homepage = "https://github.com/SaiAkash0/aesp"
+authors = ["Akash <aakash6992@gmail.com>"]
+keywords = ["ai", "agents", "mcp", "context", "memory"]
+categories = ["development-tools", "command-line-utilities"]
+readme = "README.md"
+
+[dependencies]
+# CLI
+clap = { version = "4", features = ["derive"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+
+# Storage
+rusqlite = { version = "0.31", features = ["bundled", "backup"] }
+
+# Tree-sitter (core + language grammars)
+tree-sitter = "0.24"
+tree-sitter-typescript = "0.23"
+tree-sitter-javascript = "0.23"
+tree-sitter-python = "0.23"
+
+# File watching
+notify = "6"
+notify-debouncer-full = "0.3"
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Utilities
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+walkdir = "2"
+globset = "0.4"
+ignore = "0.4"
+sha2 = "0.10"
+regex = "1"
+thiserror = "1"
+anyhow = "1"
+
+[dev-dependencies]
+tempfile = "3"
+assert_cmd = "2"
+predicates = "3"

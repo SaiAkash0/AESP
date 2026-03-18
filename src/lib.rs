@@ -1,0 +1,14 @@
+pub mod config;
+pub mod constraints;
+pub mod compiler;
+pub mod decisions;
+pub mod events;
+pub mod graph;
+pub mod indexer;
+pub mod mcp;
+pub mod normalizer;
+pub mod parser;
+pub mod schema;
+pub mod storage;
+pub mod verification;
+pub mod watcher;

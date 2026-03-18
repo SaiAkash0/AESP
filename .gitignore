@@ -1,0 +1,8 @@
+/target
+.aesp/
+*.db
+*.db-wal
+*.db-shm
+.env
+*.pdb
+AESP_ARCHITECTURE.md
