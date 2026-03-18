@@ -103,6 +103,34 @@ Add AESP to your Cursor MCP configuration. Create or edit `.cursor/mcp.json` in 
 }
 ```
 
+**Windows path formats (both valid):**
+
+**Option A (recommended): forward slashes**
+
+```json
+{
+  "mcpServers": {
+    "aesp": {
+      "command": "C:/Users/you/Desktop/AESP/target/release/aesp.exe",
+      "args": ["serve", "C:/Users/you/projects/your-project"]
+    }
+  }
+}
+```
+
+**Option B: backslashes (must be double-escaped in JSON)**
+
+```json
+{
+  "mcpServers": {
+    "aesp": {
+      "command": "C:\\\\Users\\\\you\\\\Desktop\\\\AESP\\\\target\\\\release\\\\aesp.exe",
+      "args": ["serve", "C:\\\\Users\\\\you\\\\projects\\\\your-project"]
+    }
+  }
+}
+```
+
 Restart Cursor. You should see AESP's 13 tools appear in the MCP panel. The agent will automatically call `aesp_start_task` at the beginning of any task.
 
 ---
